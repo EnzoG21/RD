@@ -8,15 +8,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', [FormController::class, 'create'])
-    ->middleware(['auth', 'verified', 'kitandjersey'])
-    ->name('dashboard'); // Show the form on the dashboard
+// routes\web.php
 
-Route::post('/form', [FormController::class, 'store'])
-    ->middleware(['auth', 'verified', 'kitandjersey'])
-    ->name('form.store'); // Submit the form data
 
-Route::middleware('auth')->group(function () {
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', [FormController::class, 'create'])->name('dashboard'); // Show the form on the dashboard
+    Route::post('/form', [FormController::class, 'store'])->name('form.store'); // Submit the form data
+    // Existing routes...
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -31,4 +30,5 @@ Route::middleware(['auth','role:President,Vice_President_Treasurer_Kit_Manager']
 });
 
 require __DIR__.'/auth.php';
+
 

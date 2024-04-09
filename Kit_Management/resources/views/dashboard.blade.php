@@ -1,71 +1,52 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('layouts.app')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
-                </div>
+@section('content')
+    <div class="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900">
+        <div class="w-full mx-auto" style="max-width: 500px;">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-6">
+                <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-300 mb-4">Welcome to the Kit Management System Reporting Form</h2>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Please fill out the form below to submit your report.</p>
             </div>
-        </div>
-    </div>
-
-    @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Dashboard</div>
-
-                    <div class="card-body">
-                        @if(session('success'))
-                            <div class="alert alert-success">
-                                {{ session('success') }}
-                            </div>
-                        @endif
-
-                        <form method="post" action="{{ route('form.store') }}">
-                            @csrf
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Enter Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="surname">Surname</label>
-                                <input type="text" name="surname" class="form-control" id="surname" placeholder="Enter Surname">
-                            </div>
-                            <div class="form-group">
-                                <label for="KitID">Kit ID</label>
-                                <select name="KitID" class="form-control" id="KitID">
-                                    @foreach($kits as $kit)
-                                        <option value="{{ $kit->KitID }}">{{ $kit->KitID }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="JerseyID">Jersey ID</label>
-                                <select name="JerseyID" class="form-control" id="JerseyID">
-                                    @foreach($jerseys as $jersey)
-                                        <option value="{{ $jersey->JerseyID }}">{{ $jersey->JerseyID }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="textbox">Textbox</label>
-                                <textarea name="textbox" class="form-control" id="textbox" placeholder="Enter Text"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
                     </div>
-                </div>
+                @endif
+
+                <form method="post" action="{{ route('form.store') }}" class="mx-auto">
+                    @csrf
+                    <div class="mb-4">
+                        <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
+                        <input type="text" name="name" id="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Enter Name">
+                    </div>
+                    <div class="mb-4">
+                        <label for="surname" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Surname</label>
+                        <input type="text" name="surname" id="surname" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Enter Surname">
+                    </div>
+                    <div class="mb-4">
+                        <label for="KitID" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Kit ID</label>
+                        <select name="KitID" id="KitID" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                            @foreach($kits as $kit)
+                                <option value="{{ $kit->KitID }}">{{ $kit->KitID }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="JerseyID" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Jersey ID</label>
+                        <select name="JerseyID" id="JerseyID" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                            @foreach($jerseys as $jersey)
+                                <option value="{{ $jersey->JerseyID }}">{{ $jersey->JerseyID }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="textbox" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Textbox</label>
+                        <textarea name="textbox" id="textbox" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Enter Text"></textarea>
+                    </div>
+                    <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Submit</button>
+                </form>
             </div>
         </div>
     </div>
 @endsection
-    
-</x-app-layout>
