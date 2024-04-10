@@ -23,12 +23,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/admin/kit_list', [KitController::class, 'index'])->name('admin.kit_list');
-});
+
 
 Route::middleware(['auth','role:admin'])->group(function () {
     Route::get('/admin/dashboard',[App\Http\Controllers\AdminController::class,'dashboard'])->name('admin.dashboard');
+    Route::get('/admin/kit_list', [KitController::class, 'index'])->name('admin.kit_list');
 });
 
 Route::middleware(['auth','role:President,Vice_President_Treasurer_Kit_Manager'])->group(function () {
