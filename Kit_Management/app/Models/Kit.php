@@ -9,4 +9,9 @@ class Kit extends Model
 {
     protected $table = 'kit';
     protected $primaryKey = 'KitID';
+    protected $fillable = ['brand', 'model', 'size', 'status', 'date'];
+    public function kit()
+    {
+        return $this->hasMany(Kit::class);
+    }
 }
