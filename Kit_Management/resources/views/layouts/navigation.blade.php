@@ -18,6 +18,10 @@
                     <x-nav-link :href="route('admin.kit_list')" :active="request()->routeIs('admin.kit_list')">
     {{ __('Kit List') }}
 </x-nav-link>
+
+<x-nav-link :href="route('admin.forms')" :active="request()->routeIs('admin.forms')">
+    {{ __('Form List') }}
+</x-nav-link>
                 </div>
             </div>
 

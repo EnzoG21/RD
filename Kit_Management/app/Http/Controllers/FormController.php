@@ -9,6 +9,12 @@ use App\Models\Jersey;
 
 class FormController extends Controller
 {
+
+    public function index()
+    {
+        $forms = Form::all(); // Retrieve all forms from the database
+        return view('admin.forms', compact('forms'));
+    }
     public function create()
     {
         $kits = Kit::all(); // Fetch all kits
