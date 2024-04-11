@@ -18,18 +18,19 @@ class FormController extends Controller
     }
 
     public function store(Request $request)
-    {
-        // Validate the request
-        $validatedData = $request->validate([
-            'name' => 'required',
-            'surname' => 'required',
-            'KitID' => 'required',
-            'JerseyID' => 'required',
-            'textbox' => 'required',
-        ]);
+{
+    // Validate the request
+    $validatedData = $request->validate([
+        'name' => 'required',
+        'surname' => 'required',
+        'KitID' => 'required',
+        'JerseyID' => 'required',
+        'textbox' => 'required',
+        'issue' => 'required', // Add validation for 'issue'
+    ]);
 
-        Form::create($validatedData);
+    Form::create($validatedData);
 
-        return redirect()->route('dashboard')->with('success', 'Thank you for your Submission');
-    }
+    return redirect()->route('dashboard')->with('success', 'Thank you for your Submission');
+}
 }

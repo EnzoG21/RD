@@ -10,5 +10,6 @@ class Form extends Model
     protected $table = 'form';
     protected $primaryKey = 'FormID';
 
-    protected $fillable = ['name', 'surname', 'KitID', 'JerseyID', 'textbox'];
+    protected $fillable = ['name', 'surname', 'KitID', 'JerseyID', 'textbox', 'issue']; 
+
 }

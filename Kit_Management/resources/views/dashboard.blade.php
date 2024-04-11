@@ -41,6 +41,17 @@
                         </select>
                     </div>
                     <div class="mb-4">
+    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Issue</label>
+    <div class="ml-4 flex items-center">
+        <input type="radio" id="broken" name="issue" value="broken" class="focus:ring-indigo-500 h-6 w-6 text-indigo-600 border-gray-300">
+        <label for="broken" class="ml-2 block text-sm font-medium text-gray-700 dark:text-gray-300">Broken</label>
+    </div>
+    <div class="mt-2 ml-8 flex items-center"> <!-- Adjusted margin-top -->
+        <input type="radio" id="lost" name="issue" value="lost" class="focus:ring-indigo-500 h-6 w-6 text-indigo-600 border-gray-300">
+        <label for="lost" class="ml-2 block text-sm font-medium text-gray-700 dark:text-gray-300">Lost</label>
+    </div>
+</div>
+                    <div class="mb-4">
                         <label for="textbox" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Textbox</label>
                         <textarea name="textbox" id="textbox" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Enter Text"></textarea>
                     </div>
