@@ -1,8 +1,7 @@
+<!-- adming/management.blade.php -->
+
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <h1>Management</h1>
-        
-    </div>
+    <!-- Your HTML content for management view goes here -->
 @endsection

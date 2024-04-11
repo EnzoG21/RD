@@ -26,6 +26,9 @@
 <x-nav-link :href="route('admin.forms')" :active="request()->routeIs('admin.forms')">
     {{ __('Form List') }}
 </x-nav-link>
+<x-nav-link :href="route('admin.management')" :active="request()->routeIs('admin.management')">
+    {{ __('Management') }}
+</x-nav-link>
                 </div>
             </div>
 
@@ -84,6 +87,17 @@
             <x-responsive-nav-link :href="route('admin.kit_list')" :active="request()->routeIs('admin.kit_list')">
                 {{ __('Kit List') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('admin.allocations')" :active="request()->routeIs('admin.allocations')">
+    {{ __('Kit Allocation') }}
+</x-responsive-nav-link>
+
+<x-responsive-nav-link :href="route('admin.forms')" :active="request()->routeIs('admin.forms')">
+    {{ __('Form List') }}
+</x-responsive-nav-link>
+
+<x-responsive-nav-link :href="route('admin.management')" :active="request()->routeIs('admin.management')">
+    {{ __('Management') }}
+</x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->

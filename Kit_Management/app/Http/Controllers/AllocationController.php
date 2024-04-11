@@ -13,4 +13,5 @@ class AllocationController extends Controller
 
         return view('admin.allocations', compact('allocations'));
     }
+
 }
