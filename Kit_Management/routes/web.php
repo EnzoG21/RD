@@ -27,8 +27,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 Route::middleware(['auth','role:admin'])->group(function () {
     Route::get('/admin/dashboard',[App\Http\Controllers\AdminController::class,'dashboard'])->name('admin.dashboard');
-    Route::get('/admin/kit_list', [KitController::class, 'index'])->name('admin.kit_list');
-    Route::get('/admin/forms', [FormController::class, 'index'])->name('admin.forms');
+    Route::get('/admin/kit_list', [App\Http\Controllers\KitController::class, 'index'])->name('admin.kit_list');
+    Route::get('/admin/forms', [App\Http\Controllers\FormController::class, 'index'])->name('admin.forms');
+    Route::get('admin/allocations', [App\Http\Controllers\AllocationController::class, 'index'])->name('admin.allocations');
 });
 
 Route::middleware(['auth','role:President,Vice_President_Treasurer_Kit_Manager'])->group(function () {

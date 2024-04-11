@@ -19,6 +19,10 @@
     {{ __('Kit List') }}
 </x-nav-link>
 
+<x-nav-link :href="route('admin.allocations')" :active="request()->routeIs('admin.allocations')">
+    {{ __('Kit Allocation') }}
+</x-nav-link>
+
 <x-nav-link :href="route('admin.forms')" :active="request()->routeIs('admin.forms')">
     {{ __('Form List') }}
 </x-nav-link>
