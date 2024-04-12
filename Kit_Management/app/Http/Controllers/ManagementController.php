@@ -24,44 +24,43 @@ class ManagementController extends Controller
         $kit->date = $request->date;
         $kit->save();
 
-       
+        return redirect()->back();
     }
 
     public function updateKit(Request $request)
     {
-        // Validate incoming request
+        
         $request->validate([
-            'kit_id' => 'required|exists:kit,KitID', // Ensure the provided KitID exists in the database
-            // Add validation rules for other fields if necessary
+            'kit_id' => 'required|exists:kit,KitID', 
         ]);
 
-        // Find the kit by ID
+        
         $kit = Kit::findOrFail($request->kit_id);
 
-        // Update kit fields
+        
         $kit->brand = $request->brand;
         $kit->model = $request->model;
         $kit->size = $request->size;
         $kit->status = $request->status;
        
 
-        // Save the updated kit
+    
         $kit->save();
 
-        
+        return redirect()->back();
     }
 
     public function deleteKit(Request $request)
     {
-        // Validate incoming request
+        
         $request->validate([
             'kit_id_delete' => 'required|exists:kit,KitID', // Ensure the provided Kit ID exists in the database
         ]);
 
-        // Find the kit by ID and delete it
+        
         Kit::findOrFail($request->kit_id_delete)->delete();
 
-        
+        return redirect()->back();
     }
 
     public function storeJersey(Request $request)
@@ -71,44 +70,44 @@ class ManagementController extends Controller
         $jersey->size = $request->size;
         $jersey->save();
 
-        
+        return redirect()->back();
     }
 
     
 
     public function updateJersey(Request $request)
     {
-        // Validate incoming request
+        
         $request->validate([
-            'jersey_id' => 'required|exists:jersey,JerseyID', // Ensure the provided Jersey ID exists in the database
-            // Add validation rules for other fields if necessary
+            'jersey_id' => 'required|exists:jersey,JerseyID', 
+            
         ]);
 
-        // Find the jersey by ID
+        
         $jersey = Jersey::findOrFail($request->jersey_id);
 
-        // Update jersey fields
+       
         $jersey->number = $request->number;
         $jersey->size = $request->size;
-        // Add other fields if needed
-
-        // Save the updated jersey
-        $jersey->save();
+        
 
         
+        $jersey->save();
+
+        return redirect()->back();
     }
 
     public function deleteJersey(Request $request)
     {
-        // Validate incoming request
+        
         $request->validate([
             'jersey_id_delete' => 'required|exists:jersey,JerseyID', // Ensure the provided Jersey ID exists in the database
         ]);
 
-        // Find the jersey by ID and delete it
+    
         Jersey::findOrFail($request->jersey_id_delete)->delete();
 
-    
+        return redirect()->back();
     }
 
 
