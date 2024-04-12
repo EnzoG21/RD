@@ -33,6 +33,14 @@ Route::middleware(['auth','role:admin'])->group(function () {
     Route::get('/admin/forms', [App\Http\Controllers\FormController::class, 'index'])->name('admin.forms');
     Route::get('/admin/allocations', [AllocationController::class, 'index'])->name('admin.allocations');
     Route::get('/admin/management', [ManagementController::class, 'index'])->name('admin.management');
+    Route::post('/admin/management/storeKit', [ManagementController::class, 'storeKit'])->name('management.storeKit');
+    Route::post('/admin/management/updateKit', [ManagementController::class, 'updateKit'])->name('management.updateKit');
+    Route::post('/admin/management/deleteKit', [ManagementController::class, 'deleteKit'])->name('management.deleteKit');
+    
+    Route::post('/admin/management/storeJersey', [ManagementController::class, 'storeJersey'])->name('management.storeJersey');
+    Route::post('/admin/management/updateJersey', [ManagementController::class, 'updateJersey'])->name('management.updateJersey');
+    Route::post('/admin/management/deleteJersey', [ManagementController::class, 'deleteJersey'])->name('management.deleteJersey');
+
     
 });
 

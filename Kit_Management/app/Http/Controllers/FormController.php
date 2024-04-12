@@ -12,15 +12,15 @@ class FormController extends Controller
 
     public function index()
     {
-        $forms = Form::all(); // Retrieve all forms from the database
+        $forms = Form::all();
         return view('admin.forms', compact('forms'));
     }
     public function create()
     {
-        $kits = Kit::all(); // Fetch all kits
-        $jerseys = Jersey::all(); // Fetch all jerseys
+        $kits = Kit::all();
+        $jerseys = Jersey::all();
 
-        return view('dashboard', compact('kits', 'jerseys')); // Pass $kits and $jerseys variables to the view
+        return view('dashboard', compact('kits', 'jerseys'));
     }
 
     public function store(Request $request)
@@ -32,11 +32,11 @@ class FormController extends Controller
         'KitID' => 'required',
         'JerseyID' => 'required',
         'textbox' => 'required',
-        'issue' => 'required', // Add validation for 'issue'
+        'issue' => 'required',
     ]);
 
     Form::create($validatedData);
 
-    return redirect()->route('dashboard')->with('success', 'Thank you for your Submission');
+    
 }
 }
