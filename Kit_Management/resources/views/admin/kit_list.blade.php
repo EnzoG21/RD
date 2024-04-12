@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="mx-auto max-w-[800px]">
+    <div class="mx-auto max-w-[800px] mt-8">
         <div class="bg-white p-6">
             <h1 class="text-xl font-bold text-black mb-8 text-center">Kit List</h1>
             
@@ -23,12 +23,12 @@
                         <tbody>
                             @foreach($kits as $kit)
                                 <tr>
-                                    <td class="border px-4 py-2">{{ $kit->id }}</td>
-                                    <td class="border px-4 py-2">{{ $kit->brand }}</td>
-                                    <td class="border px-4 py-2">{{ $kit->model }}</td>
-                                    <td class="border px-4 py-2">{{ $kit->size }}</td>
-                                    <td class="border px-4 py-2">{{ $kit->status }}</td>
-                                    <td class="border px-4 py-2">{{ $kit->date }}</td>
+                                    <td class="border px-4 py-2">{{ $kit->KitID }}</td>
+                                    <td class="border px-4 py-2">{{ $kit->Brand }}</td>
+                                    <td class="border px-4 py-2">{{ $kit->Model }}</td>
+                                    <td class="border px-4 py-2">{{ $kit->Size }}</td>
+                                    <td class="border px-4 py-2">{{ $kit->Status }}</td>
+                                    <td class="border px-4 py-2">{{ $kit->Date }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -51,9 +51,9 @@
                         <tbody>
                             @foreach($jerseys as $jersey)
                                 <tr>
-                                    <td class="border px-4 py-2">{{ $jersey->id }}</td>
-                                    <td class="border px-4 py-2">{{ $jersey->number }}</td>
-                                    <td class="border px-4 py-2">{{ $jersey->size }}</td>
+                                    <td class="border px-4 py-2">{{ $jersey->JerseyID }}</td>
+                                    <td class="border px-4 py-2">{{ $jersey->Number }}</td>
+                                    <td class="border px-4 py-2">{{ $jersey->Size }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
