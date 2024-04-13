@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="mx-auto max-w-[800px]">
+    <div class="mx-auto max-w-[800px] mt-8">
         <div class="bg-white p-6">
             <h1 class="text-4xl font-bold text-black mb-8 text-center">Kit Allocation</h1>
             

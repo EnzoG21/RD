@@ -146,5 +146,31 @@
             </form>
         </div>
     </div>
+
+    <div class="flex justify-center">
+        <div class="mr-4">
+            <h2 class="text-white">Allocate Kit</h2>
+            <form class="mt-4" method="POST" action="{{ route('management.allocateKit') }}">
+                @csrf
+                <div class="mb-4">
+                    <label for="user_id" class="text-white">User ID:</label>
+                    <input type="text" id="user_id" name="user_id" required
+                        class="bg-black text-white border border-gray-400 rounded px-4 py-2 w-full">
+                </div>
+                <div class="mb-4">
+                    <label for="kit_id" class="text-white">Kit ID:</label>
+                    <input type="text" id="kit_id" name="kit_id" required
+                        class="bg-black text-white border border-gray-400 rounded px-4 py-2 w-full">
+                </div>
+                <div class="mb-4">
+                    <label for="jersey_id" class="text-white">Jersey ID:</label>
+                    <input type="text" id="jersey_id" name="jersey_id" required
+                        class="bg-black text-white border border-gray-400 rounded px-4 py-2 w-full">
+                </div>
+                <button type="submit"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">Allocate Kit</button>
+            </form>
+        </div>
+    </div>
 </div>
 @endsection

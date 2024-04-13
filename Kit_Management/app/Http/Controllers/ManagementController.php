@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Kit;
 use App\Models\Jersey;
+use App\Models\Allocation;
 
 class ManagementController extends Controller
 {
@@ -54,7 +55,7 @@ class ManagementController extends Controller
     {
         
         $request->validate([
-            'kit_id_delete' => 'required|exists:kit,KitID', // Ensure the provided Kit ID exists in the database
+            'kit_id_delete' => 'required|exists:kit,KitID',
         ]);
 
         
@@ -101,12 +102,32 @@ class ManagementController extends Controller
     {
         
         $request->validate([
-            'jersey_id_delete' => 'required|exists:jersey,JerseyID', // Ensure the provided Jersey ID exists in the database
+            'jersey_id_delete' => 'required|exists:jersey,JerseyID',
         ]);
 
     
         Jersey::findOrFail($request->jersey_id_delete)->delete();
 
+        return redirect()->back();
+    }
+
+    public function allocateKit(Request $request)
+    {
+        // Validate the incoming request data
+        $validatedData = $request->validate([
+            'user_id' => 'required|exists:users,id',
+            'kit_id' => 'required|exists:kit,KitID',
+            'jersey_id' => 'required|exists:jersey,JerseyID',
+        ]);
+
+        // Create a new allocation instance
+        $allocation = new Allocation();
+        $allocation->user_id = $validatedData['user_id'];
+        $allocation->KitID = $validatedData['kit_id'];
+        $allocation->JerseyID = $validatedData['jersey_id'];
+        $allocation->save();
+
+        // Redirect back with success message
         return redirect()->back();
     }
 

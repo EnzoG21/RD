@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KitController;
 use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\AllocationController;
+use App\Http\Controllers\PanelController;
 
 
 Route::get('/', function () {
@@ -31,6 +32,7 @@ Route::middleware(['auth','role:admin'])->group(function () {
     Route::get('/admin/kit_list', [KitController::class, 'index'])->name('admin.kit_list');
     Route::get('/admin/forms', [App\Http\Controllers\FormController::class, 'index'])->name('admin.forms');
     Route::get('/admin/allocations', [AllocationController::class, 'index'])->name('admin.allocations');
+    Route::post('/allocate-kit', [ManagementController::class, 'allocateKit'])->name('management.allocateKit');
     Route::get('/admin/management', [ManagementController::class, 'index'])->name('admin.management');
     Route::post('/admin/management/storeKit', [ManagementController::class, 'storeKit'])->name('management.storeKit');
     Route::post('/admin/management/updateKit', [ManagementController::class, 'updateKit'])->name('management.updateKit');
@@ -40,7 +42,9 @@ Route::middleware(['auth','role:admin'])->group(function () {
     Route::post('/admin/management/updateJersey', [ManagementController::class, 'updateJersey'])->name('management.updateJersey');
     Route::post('/admin/management/deleteJersey', [ManagementController::class, 'deleteJersey'])->name('management.deleteJersey');
 
-    
+    Route::get('/admin/panel', [PanelController::class, 'index'])->name('admin.panel');
+    Route::post('/admin/panel/kit-check', [PanelController::class, 'store'])->name('admin.panel.kit-check.store');
+ 
 });
 
 Route::middleware(['auth','role:President,Vice_President_Treasurer_Kit_Manager'])->group(function () {

@@ -29,6 +29,11 @@
 <x-nav-link :href="route('admin.management')" :active="request()->routeIs('admin.management')">
     {{ __('Management') }}
 </x-nav-link>
+
+<x-nav-link :href="route('admin.panel')" :active="request()->routeIs('admin.panel')">
+    {{ __('Panel') }}
+</x-nav-link>
+
                 </div>
             </div>
 
@@ -96,6 +101,8 @@
 <x-responsive-nav-link :href="route('admin.management')" :active="request()->routeIs('admin.management')">
     {{ __('Management') }}
 </x-responsive-nav-link>
+
+
         </div>
 
         <!-- Responsive Settings Options -->
