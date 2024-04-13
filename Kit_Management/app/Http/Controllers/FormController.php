@@ -12,7 +12,7 @@ class FormController extends Controller
 
     public function index()
     {
-        $forms = Form::all();
+        $forms = Form::all(); 
         return view('admin.forms', compact('forms'));
     }
     public function create()
@@ -29,14 +29,23 @@ class FormController extends Controller
     $validatedData = $request->validate([
         'name' => 'required',
         'surname' => 'required',
-        'KitID' => 'required',
-        'JerseyID' => 'required',
+        'KitID' => 'nullable',
+        'JerseyID' => 'nullable',
         'textbox' => 'required',
         'issue' => 'required',
     ]);
 
-    Form::create($validatedData);
+    if (empty($validatedData['KitID'])) {
+        $validatedData['KitID'] = null;
+    }
 
+
+    if (empty($validatedData['JerseyID'])) {
+        $validatedData['JerseyID'] = null;
+    }
+
+    Form::create($validatedData);
+    return redirect()->back();
     
 }
 }
