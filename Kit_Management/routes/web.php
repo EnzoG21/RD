@@ -44,7 +44,9 @@ Route::middleware(['auth','role:admin'])->group(function () {
 
     Route::get('/admin/panel', [PanelController::class, 'index'])->name('admin.panel');
     Route::post('/admin/panel/kit-check', [PanelController::class, 'store'])->name('admin.panel.kit-check.store');
- 
+    Route::post('/admin/panel/invoice/store', [PanelController::class, 'storeInvoice'])->name('admin.panel.invoice.store');
+    Route::post('/admin/panel/order/store', [PanelController::class, 'storeOrder'])->name('admin.panel.order.store');
+    Route::post('/admin/panel/order/update', [PanelController::class, 'updateOrderStatus'])->name('admin.panel.order.update');
 });
 
 Route::middleware(['auth','role:President,Vice_President_Treasurer_Kit_Manager'])->group(function () {
