@@ -14,7 +14,7 @@ class FormController extends Controller
     {
         $forms = Form::all(); 
         return view('admin.forms', compact('forms'));
-        // return view('committee.forms', compact('forms'));
+        
         
     }
     public function create()

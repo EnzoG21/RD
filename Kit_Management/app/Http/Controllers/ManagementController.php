@@ -13,7 +13,7 @@ class ManagementController extends Controller
     {
         
         return view('admin.management');
-        // return view('committee.management');
+        
     }
 
     public function storeKit(Request $request)

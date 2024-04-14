@@ -14,6 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
         'role' => \App\Http\Middleware\Role::class,
         'kitandjersey' => \App\Http\Middleware\KitAndJerseyData::class,
+        
     ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
