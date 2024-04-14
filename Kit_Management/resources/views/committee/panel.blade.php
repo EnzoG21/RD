@@ -27,7 +27,7 @@
         </div>
 
         <h2 class="text-2xl font-semibold my-4">Add Kit Check</h2>
-        <form action="{{ route('admin.panel.kit-check.store') }}" method="POST" class="mb-8">
+        <form action="{{ route('committee.panel.kit-check.store') }}" method="POST" class="mb-8">
             @csrf
             <div class="flex flex-col mb-4">
                 <label for="KitID" class="text-sm font-semibold mb-1">KitID:</label>
@@ -81,7 +81,7 @@
         </div>
 
         <h2 class="text-2xl font-semibold my-4">Add Invoice</h2>
-        <form action="{{ route('admin.panel.invoice.store') }}" method="POST" class="mb-8">
+        <form action="{{ route('committee.panel.invoice.store') }}" method="POST" class="mb-8">
             @csrf
             <div class="flex flex-col mb-4">
                 <label for="Date" class="text-sm font-semibold mb-1">Date:</label>
@@ -112,7 +112,7 @@
         </form>
 
         <h2 class="text-2xl font-semibold mb-4">Orders</h2>
-        <!-- Display existing orders -->
+        
         <table class="table-auto border-collapse w-full mb-4">
             <thead>
                 <tr>
@@ -136,9 +136,8 @@
             </tbody>
         </table>
 
-        <!-- Input form to add a new order -->
         <h2 class="text-2xl font-semibold mb-4">Add Order</h2>
-        <form action="{{ route('admin.panel.order.store') }}" method="POST" class="mb-8">
+        <form action="{{ route('committee.panel.order.store') }}" method="POST" class="mb-8">
             @csrf
             <div class="flex flex-col mb-4">
                 <label for="Date" class="text-sm font-semibold mb-1">Date:</label>
@@ -163,9 +162,9 @@
             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Submit</button>
         </form>
 
-        <!-- Update form for changing order status -->
+        
         <h2 class="text-2xl font-semibold mb-4">Update Order Status</h2>
-        <form action="{{ route('admin.panel.order.update') }}" method="POST">
+        <form action="{{ route('committee.panel.order.update') }}" method="POST">
             @csrf
             <div class="flex flex-col mb-4">
                 <label for="order_id" class="text-sm font-semibold mb-1">Select Order:</label>

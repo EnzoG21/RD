@@ -13,5 +13,7 @@ class KitController extends Controller
         $kits = Kit::all();
         $jerseys = Jersey::all();
         return view('admin.kit_list', compact('kits', 'jerseys'));
+        // return view('committee.kit_list', compact('kits', 'jerseys'));
+        
     }
 }

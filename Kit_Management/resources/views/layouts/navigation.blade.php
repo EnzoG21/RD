@@ -102,6 +102,10 @@
     {{ __('Management') }}
 </x-responsive-nav-link>
 
+<x-responsive-nav-link :href="route('admin.panel')" :active="request()->routeIs('admin.panel')">
+    {{ __('Panel') }}
+</x-responsive-nav-link>
+
 
         </div>
 

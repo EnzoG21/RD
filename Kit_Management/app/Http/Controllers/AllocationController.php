@@ -12,6 +12,8 @@ class AllocationController extends Controller
         $allocations = Allocation::with(['user', 'kit', 'jersey'])->get();
 
         return view('admin.allocations', compact('allocations'));
+        // return view('committee.allocations', compact('allocations'));
+        
     }
 
     

@@ -13,6 +13,7 @@ class ManagementController extends Controller
     {
         
         return view('admin.management');
+        // return view('committee.management');
     }
 
     public function storeKit(Request $request)
@@ -113,21 +114,21 @@ class ManagementController extends Controller
 
     public function allocateKit(Request $request)
     {
-        // Validate the incoming request data
+        
         $validatedData = $request->validate([
             'user_id' => 'required|exists:users,id',
             'kit_id' => 'required|exists:kit,KitID',
             'jersey_id' => 'required|exists:jersey,JerseyID',
         ]);
 
-        // Create a new allocation instance
+        
         $allocation = new Allocation();
         $allocation->user_id = $validatedData['user_id'];
         $allocation->KitID = $validatedData['kit_id'];
         $allocation->JerseyID = $validatedData['jersey_id'];
         $allocation->save();
 
-        // Redirect back with success message
+        
         return redirect()->back();
     }
 

@@ -17,6 +17,7 @@ class PanelController extends Controller
         $invoices = Invoice::all();
         $orders = Order::all(); 
         return view('admin.panel', compact('kitChecks', 'kits', 'invoices', 'orders'));
+        // return view('committee.panel', compact('kitChecks', 'kits', 'invoices', 'orders'));
     }
 
     public function store(Request $request)
