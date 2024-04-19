@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container mx-auto py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-    <!-- Add Kit Form -->
+
     <div class="bg-gray-800 p-6 rounded-lg">
         <h2 class="text-white text-lg mb-4">Add Kit</h2>
         <form method="POST" action="{{ route('management.storeKit') }}">
@@ -31,7 +31,7 @@
         </form>
     </div>
 
-    <!-- Add Jersey Form -->
+    
     <div class="bg-gray-800 p-6 rounded-lg">
         <h2 class="text-white text-lg mb-4">Add Jersey</h2>
         <form method="POST" action="{{ route('management.storeJersey') }}">
@@ -48,7 +48,7 @@
         </form>
     </div>
 
-    <!-- Update Kit Form -->
+    
     <div class="bg-gray-800 p-6 rounded-lg">
         <h2 class="text-white text-lg mb-4">Update Kit</h2>
         <form method="POST" action="{{ route('management.updateKit') }}">
@@ -57,12 +57,12 @@
                 <label for="kit_id" class="text-white block">Kit ID:</label>
                 <input type="text" id="kit_id" name="kit_id" required class="input-field">
             </div>
-            <!-- Add other fields as necessary -->
+            
             <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md">Update Kit</button>
         </form>
     </div>
 
-    <!-- Update Jersey Form -->
+    
     <div class="bg-gray-800 p-6 rounded-lg">
         <h2 class="text-white text-lg mb-4">Update Jersey</h2>
         <form method="POST" action="{{ route('management.updateJersey') }}">
@@ -71,12 +71,12 @@
                 <label for="jersey_id" class="text-white block">Jersey ID:</label>
                 <input type="text" id="jersey_id" name="jersey_id" required class="input-field">
             </div>
-            <!-- Add other fields as necessary -->
+            
             <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md">Update Jersey</button>
         </form>
     </div>
 
-    <!-- Delete Kit Form -->
+   
     <div class="bg-gray-800 p-6 rounded-lg">
         <h2 class="text-white text-lg mb-4">Delete Kit</h2>
         <form method="POST" action="{{ route('management.deleteKit') }}">
@@ -89,7 +89,7 @@
         </form>
     </div>
 
-    <!-- Delete Jersey Form -->
+    
     <div class="bg-gray-800 p-6 rounded-lg">
         <h2 class="text-white text-lg mb-4">Delete Jersey</h2>
         <form method="POST" action="{{ route('management.deleteJersey') }}">
@@ -102,7 +102,7 @@
         </form>
     </div>
 
-    <!-- Allocate Kit Form -->
+  
     <div class="bg-gray-800 p-6 rounded-lg">
         <h2 class="text-white text-lg mb-4">Allocate Kit</h2>
         <form method="POST" action="{{ route('management.allocateKit') }}">

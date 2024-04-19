@@ -5,7 +5,7 @@
         <div class="bg-white p-6">
             <h1 class="text-4xl font-bold text-black mb-8 text-center">Kit Allocation</h1>
             
-            <!-- Kit Allocation Table -->
+            
             <div class="mb-12">
                 <h2 class="text-3xl font-bold text-black mb-4 text-center">Kit Allocation Table</h2>
                 <div class="overflow-x-auto">

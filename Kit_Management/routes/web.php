@@ -12,10 +12,12 @@ use App\Http\Controllers\AdminController;
 
 
 
+// Define routes using Route facade
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome'); // Route to the welcome view
 });
 
+// Routes that require authentication and email verification
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [FormController::class, 'create'])->name('dashboard');
     Route::post('/form', [FormController::class, 'store'])->name('store');
@@ -25,8 +27,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 
-
-Route::middleware(['auth','role:admin,President,Vice_President,Treasurer,Kit_Manager'])->group(function () {
+// Routes that require authentication and admin role
+Route::middleware(['auth','role:admin'])->group(function () {
     Route::get('/admin/dashboard',[App\Http\Controllers\AdminController::class,'dashboard'])->name('admin.dashboard');
     Route::get('/admin/kit_list', [KitController::class, 'index'])->name('admin.kit_list');
     Route::get('/admin/forms', [App\Http\Controllers\FormController::class, 'index'])->name('admin.forms');

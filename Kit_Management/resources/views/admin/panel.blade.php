@@ -112,7 +112,7 @@
         </form>
 
         <h2 class="text-2xl font-semibold mb-4">Orders</h2>
-        <!-- Display existing orders -->
+        
         <table class="table-auto border-collapse w-full mb-4">
             <thead>
                 <tr>
@@ -136,7 +136,7 @@
             </tbody>
         </table>
 
-        <!-- Input form to add a new order -->
+        
         <h2 class="text-2xl font-semibold mb-4">Add Order</h2>
         <form action="{{ route('admin.panel.order.store') }}" method="POST" class="mb-8">
             @csrf
@@ -163,7 +163,7 @@
             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Submit</button>
         </form>
 
-        <!-- Update form for changing order status -->
+        
         <h2 class="text-2xl font-semibold mb-4">Update Order Status</h2>
         <form action="{{ route('admin.panel.order.update') }}" method="POST">
             @csrf

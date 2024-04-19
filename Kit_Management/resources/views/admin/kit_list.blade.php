@@ -5,7 +5,7 @@
         <div class="bg-white p-6">
             <h1 class="text-xl font-bold text-black mb-8 text-center">Kit List</h1>
             
-            <!-- Kits Table -->
+            
             <div class="mb-12">
                 <h2 class="text-xl md:text-3xl font-bold text-black mb-4 text-center">Kits Table</h2>
                 <div class="overflow-x-auto">
@@ -36,7 +36,7 @@
                 </div>
             </div>
             
-            <!-- Jerseys Table -->
+           
             <div>
                 <h2 class="text-xl md:text-3xl font-bold text-black mb-4 text-center">Jerseys Table</h2>
                 <div class="overflow-x-auto">

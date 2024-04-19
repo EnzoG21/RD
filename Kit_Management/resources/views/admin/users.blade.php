@@ -5,7 +5,7 @@
         <div class="bg-white p-6">
             <h1 class="text-4xl font-bold text-black mb-8 text-center">User List</h1>
             
-            <!-- User List Table -->
+        
             <div class="mb-12">
                 <div class="overflow-x-auto">
                     <table class="table-auto bg-gray-100 w-full rounded-lg">

@@ -15,7 +15,7 @@ class CreateFormTable extends Migration
             $table->unsignedBigInteger('KitID');
             $table->unsignedBigInteger('JerseyID');
             $table->text('textbox');
-            $table->enum('issue', ['broken', 'lost']); // Add issue column
+            $table->enum('issue', ['broken', 'lost']);
             $table->foreign('KitID')->references('KitID')->on('kit')->onDelete('cascade');
             $table->foreign('JerseyID')->references('JerseyID')->on('jersey')->onDelete('cascade');
             $table->timestamps();
