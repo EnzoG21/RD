@@ -20,7 +20,7 @@ To set up the Kit Management System, follow these steps:
 1. Host the project on a server and connect it to a database.
 2. Utilize software like MAMP for hosting and connect to a local database.
 3. Modify the `.env` file and `database.php` file located in `App/config/database.php` to configure the database connection.
-4. Run database migrations and seed data to ensure proper functionality. Alternatively, use provided SQL files with test data.
+4. Run database migrations and seed data to ensure proper functionality
 
 ## Usage
 
