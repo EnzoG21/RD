@@ -53,11 +53,32 @@
         <h2 class="text-white text-lg mb-4">Update Kit</h2>
         <form method="POST" action="{{ route('management.updateKit') }}">
             @csrf
+           
             <div class="mb-4">
-                <label for="kit_id" class="text-white block">Kit ID:</label>
-                <input type="text" id="kit_id" name="kit_id" required class="input-field">
-            </div>
-            
+                    <label for="kit_id" class="text-white block">Kit ID:</label>
+                    <input type="text" id="kit_id" name="kit_id" required
+                        >
+                </div>
+                <div class="mb-4">
+                    <label for="brand" class="text-white block">Brand:</label>
+                    <input type="text" id="brand" name="brand" required
+                        >
+                </div>
+                <div class="mb-4">
+                    <label for="model" class="text-white block">Model:</label>
+                    <input type="text" id="model" name="model" required
+                        >
+                </div>
+                <div class="mb-4">
+                    <label for="size" class="text-white block">Size:</label>
+                    <input type="text" id="size" name="size" required
+                       >
+                </div>
+                <div class="mb-4">
+                    <label for="status" class="text-white block">Status:</label>
+                    <input type="text" id="status" name="status" required
+                        >
+                </div>
             <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md">Update Kit</button>
         </form>
     </div>
@@ -71,6 +92,14 @@
                 <label for="jersey_id" class="text-white block">Jersey ID:</label>
                 <input type="text" id="jersey_id" name="jersey_id" required class="input-field">
             </div>
+                <div class="mb-4">
+                    <label for="number" class="text-white block">Number:</label>
+                    <input type="number" id="number" name="number" required>
+                </div>
+                <div class="mb-4">
+                    <label for="size" class="text-white block">Size:</label>
+                    <input type="text" id="size" name="size" required>
+                </div>
             
             <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md">Update Jersey</button>
         </form>
